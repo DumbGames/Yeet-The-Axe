@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://dogicapixelbold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/stars.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "END"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8.347, -67.829 ), Vector2( 8.347, 67.829 ) ]
+}
+
+[sub_resource type="TileSet" id=3]
+0/name = "stars.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 2, 2 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Ending" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.347
+margin_top = 67.829
+margin_right = 300.347
+margin_bottom = 148.829
+custom_fonts/font = SubResource( 1 )
+text = "      Music by Bogard VGM
+	
+           Craby : 
+		
+		      helped with the idea
+	  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "END"
+anims/END = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( 196617, 0, 0, 196736, 0, 0, 327833, 0, 0, 393317, 0, 0, 458811, 0, 0, 524312, 0, 0, 524379, 0, 0, 524427, 0, 0, 655405, 0, 0, 655478, 0, 0, 720905, 0, 0, 720969, 0, 0, 983076, 0, 0, 983121, 0, 0, 1048683, 0, 0, 1048730, 0, 0, 1114175, 0, 0, 1245237, 0, 0, 1310845, 0, 0, 1376283, 0, 0, 1376390, 0, 0, 1441882, 0, 0, 1441937, 0, 0, 1572879, 0, 0, 1638438, 0, 0, 1638466, 0, 0, 1835113, 0, 0, 1900548, 0, 0, 2162845, 0, 0, 2228369, 0, 0, 2359309, 0, 0, 2883639, 0, 0, 2883725, 0, 0, 2949155, 0, 0, 2949206, 0, 0, 3014660, 0, 0, 3014771, 0, 0, 3080289, 0, 0, 3080343, 0, 0, 3276827, 0, 0, 3342353, 0, 0, 3407992, 0, 0, 3539047, 0, 0, 3539054, 0, 0, 3604567, 0, 0, 3604610, 0, 0, 3670165, 0, 0, 3735587, 0, 0, 3801109, 0, 0, 3997707, 0, 0, 4391065, 0, 0, 4653196, 0, 0, 4718702, 0, 0, 4784136, 0, 0, 4784147, 0, 0, 4784195, 0, 0, 4849694, 0, 0, 4849787, 0, 0, 4915283, 0, 0, 4980784, 0, 0, 5046368, 0, 0, 5308435, 0, 0, 5374026, 0, 0, 5374101, 0, 0, 5439523, 0, 0, 5439620, 0, 0, 5505031, 0, 0, 5505079, 0, 0, 5505132, 0, 0, 5570648, 0, 0, 5701750, 0, 0 )

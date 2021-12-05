@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Blood_particle.png" type="Texture" id=1]
+[ext_resource path="res://source/Big_enemy_blood.gd" type="Script" id=2]
+
+[node name="Big_enemy_blood" type="CPUParticles2D"]
+emitting = false
+amount = 42
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource( 1 )
+spread = 33.91
+gravity = Vector2( 9.8, 0 )
+initial_velocity = 227.54
+initial_velocity_random = 0.95
+color = Color( 0.603922, 0.101961, 0.0901961, 1 )
+script = ExtResource( 2 )

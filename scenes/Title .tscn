@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://dogicapixelbold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/axe.png" type="Texture" id=2]
+[ext_resource path="res://source/Title .gd" type="Script" id=3]
+[ext_resource path="res://assets/Button1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Button2.png" type="Texture" id=5]
+[ext_resource path="res://assets/stars.png" type="Texture" id=6]
+
+[sub_resource type="TileSet" id=1]
+0/name = "stars.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 2, 2 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "dark"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 68, -37 ), Vector2( 68, 37 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("axe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 253, -40 ), Vector2( 253, 40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("axe2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 56, -40 ), Vector2( 56, 40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TextureButton:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 122, 200 ), Vector2( 122, 90 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("axe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 253, 51 ), Vector2( 253, 40 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("axe2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 56, 51 ), Vector2( 56, 40 ) ]
+}
+
+[node name="Title " type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( 196703, 0, 0, 262205, 0, 0, 327684, 0, 0, 327714, 0, 0, 327765, 0, 0, 524302, 0, 0, 524403, 0, 0, 589970, 0, 0, 655460, 0, 0, 852003, 0, 0, 852020, 0, 0, 852043, 0, 0, 983066, 0, 0, 1048584, 0, 0, 1114252, 0, 0, 1376406, 0, 0, 1703950, 0, 0, 1835090, 0, 0, 1966209, 0, 0, 2031759, 0, 0, 2097198, 0, 0, 2162691, 0, 0, 2162753, 0, 0, 2293788, 0, 0, 2424941, 0, 0, 2490465, 0, 0, 2555916, 0, 0, 2687028, 0, 0, 2687096, 0, 0, 2752583, 0, 0, 2949143, 0, 0, 3080285, 0, 0, 3145806, 0, 0, 3145857, 0, 0, 3211269, 0, 0, 3211311, 0, 0, 3211413, 0, 0, 3342349, 0, 0, 3407903, 0, 0, 3407931, 0, 0, 3604601, 0, 0, 3801237, 0, 0, 3932261, 0, 0, 3997833, 0, 0, 4063274, 0, 0, 4128879, 0, 0, 4194324, 0, 0, 4259900, 0, 0, 4325385, 0, 0, 4390942, 0, 0, 4587669, 0, 0, 4784174, 0, 0, 4784213, 0, 0, 4784235, 0, 0, 4784255, 0, 0, 4849736, 0, 0, 4849762, 0, 0, 4915319, 0, 0, 4980792, 0, 0, 5111947, 0, 0, 5373961, 0, 0, 5373971, 0, 0, 5373985, 0, 0, 5374000, 0, 0, 5374024, 0, 0, 5374040, 0, 0, 5505127, 0, 0, 5505139, 0, 0, 5570708, 0, 0, 5701766, 0, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 68.0
+margin_top = 37.0
+margin_right = 242.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+text = "Yeet The AXE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="axe" type="Sprite" parent="."]
+position = Vector2( 253, 40 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="axe2" type="Sprite" parent="."]
+position = Vector2( 56, 40 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "dark"
+anims/dark = SubResource( 3 )
+anims/intro = SubResource( 4 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 122.0
+margin_top = 90.0
+margin_right = 162.0
+margin_bottom = 130.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/BIGenemy1.png" type="Texture" id=1]
+[ext_resource path="res://assets/BIGenemy2.png" type="Texture" id=2]
+[ext_resource path="res://source/Big_Enemy.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Big_enemy_blood.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.20403, 12.7568 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 15.9269, 15.9316 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 55.6157
+
+[node name="Big_Enemy" type="KinematicBody2D" groups=[
+"mobs",
+]]
+script = ExtResource( 3 )
+BLOOD_PARTICLES = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3.37323 )
+shape = SubResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 3 )
+
+[node name="detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 24.9733, 0 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
